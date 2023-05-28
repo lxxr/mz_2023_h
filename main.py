@@ -55,15 +55,15 @@ if check_password():
 
 
     uploaded_file = st.file_uploader("Выберите протоколы из ЕМИАС для анализа")
-    columns = ['Пол пациента','Дата рождения пациента','ID пациента','Код МКБ-10','Диагноз','Дата оказания услуги','Должность','Назначения','Замечания']
+    columns = ['Пол пациента','Дата рождения пациента','ID пациента','Код МКБ-10','Диагноз','Дата оказания услуги','Должность','Назначения']
 
     data=[]
     if uploaded_file is not None:
-        data=pd.read_excel(uploaded_file, sheet_name='Sheet1')
+        data=pd.read_excel(uploaded_file, sheet_name='Sheet1', skiprows=1)
 
     @st.cache_data
     def get_data() -> pd.DataFrame:
-       return pd.DataFrame(data)#pd.read_csv(dataset_url)
+       return pd.DataFrame(data,columns=columns)
 
     if uploaded_file is not None:
 #        print(data)
