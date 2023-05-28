@@ -50,12 +50,8 @@ def check_password():
 if check_password():
     st.title("Med4Pro - Анализатор протоколов")
 
-    # read csv from a github repo
-    #dataset_url = "https://raw.githubusercontent.com/Lexie88rus/bank-marketing-analysis/master/bank.csv"
+    # read  from a github repo
     base_standarts_url = "https://github.com/lxxr/mz_2023_h/raw/main/base_standarts.xlsx"
-#    n804_assigments_url = "https://github.com/lxxr/mz_2023_h/blob/main/Codes804.csv"
-#    batch_assigments_url = "https://github.com/lxxr/mz_2023_h/blob/main/BatchAssigments.csv"
-#   standart_assigments_url = "https://github.com/lxxr/mz_2023_h/blob/main/Standarts.csv"
 
 
     uploaded_file = st.file_uploader("Выберите протоколы из ЕМИАС для анализа")
@@ -63,7 +59,7 @@ if check_password():
 
     data=[]
     if uploaded_file is not None:
-        data=pd.read_excel(uploaded_file, engine='xlrd', sheet_name='Sheet1',skiprows=1)
+        data=pd.read_excel(uploaded_file, sheet_name='Sheet1', skiprows=1)
 
     @st.cache_data
     def get_data() -> pd.DataFrame:
@@ -72,9 +68,9 @@ if check_password():
     if uploaded_file is not None:
 #        print(data)
         df = get_data()
-        n804_assigments = pd.read_excel(base_standarts_url, engine='xlrd', sheet_name='n804')
-        batch_assigments=pd.read_excel(base_standarts_url, engine='xlrd', sheet_name='batch')
-        standart_assigments=pd.read_excel(base_standarts_url, engine='xlrd', sheet_name='st')
+        n804_assigments = pd.read_excel(base_standarts_url, sheet_name='n804')
+        batch_assigments=pd.read_excel(base_standarts_url, sheet_name='batch')
+        standart_assigments=pd.read_excel(base_standarts_url,  sheet_name='st')
 
         warns = []
         #for idx, row in df.iterrows():
