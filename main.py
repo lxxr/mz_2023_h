@@ -63,7 +63,7 @@ if check_password():
 
     data=[]
     if uploaded_file is not None:
-        data=pd.read_excel(uploaded_file, sheet_name='Sheet1',skiprows=1)
+        data=pd.read_excel(uploaded_file, engine='openpyxl', sheet_name='Sheet1',skiprows=1)
 
     @st.cache_data
     def get_data() -> pd.DataFrame:
@@ -72,9 +72,9 @@ if check_password():
     if uploaded_file is not None:
 #        print(data)
         df = get_data()
-        n804_assigments = pd.read_excel(base_standarts_url, sheet_name='n804')
-        batch_assigments=pd.read_excel(base_standarts_url, sheet_name='batch')
-        standart_assigments=pd.read_excel(base_standarts_url, sheet_name='st')
+        n804_assigments = pd.read_excel(base_standarts_url, engine='openpyxl', sheet_name='n804')
+        batch_assigments=pd.read_excel(base_standarts_url, engine='openpyxl', sheet_name='batch')
+        standart_assigments=pd.read_excel(base_standarts_url, engine='openpyxl', sheet_name='st')
 
         warns = []
         #for idx, row in df.iterrows():
