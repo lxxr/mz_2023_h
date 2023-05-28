@@ -5,3 +5,7 @@
 BatchAssigments.csv - Пакетные назначения
 Codes804.csv - Коды приказа 804н
 Standarts.csv - Коды соответствия стандартов по МКБ и назначений по приказу 804н
+
+Тестовые данные:
+ivanovii = "test123"
+petrovaa = "test222"
