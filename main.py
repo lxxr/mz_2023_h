@@ -63,7 +63,7 @@ if check_password():
 
     data=[]
     if uploaded_file is not None:
-        data=pd.read_excel(uploaded_file, engine='openpyxl', sheet_name='Sheet1',skiprows=1)
+        data=pd.read_excel(uploaded_file, engine='xlrd', sheet_name='Sheet1',skiprows=1)
 
     @st.cache_data
     def get_data() -> pd.DataFrame:
