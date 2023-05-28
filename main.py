@@ -68,9 +68,9 @@ if check_password():
     if uploaded_file is not None:
 #        print(data)
         df = get_data()
-        n804_assigments = pd.read_excel(base_standarts_url, sheet_name='n804')
-        batch_assigments=pd.read_excel(base_standarts_url, sheet_name='batch')
-        standart_assigments=pd.read_excel(base_standarts_url,  sheet_name='st')
+#        n804_assigments = pd.read_excel(base_standarts_url, sheet_name='n804')
+#        batch_assigments=pd.read_excel(base_standarts_url, sheet_name='batch')
+#        standart_assigments=pd.read_excel(base_standarts_url,  sheet_name='st')
 
         warns = []
         #for idx, row in df.iterrows():
